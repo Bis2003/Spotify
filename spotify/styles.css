@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: white;
+}
+
+/* All your existing styles here... */
+
+/* Image and Play Button Styles */
+.song-image,
+.artist-image,
+.playlist-image,
+.radio-image,
+.chart-image {
+    width: 100%;
+    padding-bottom: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    position: relative;
+    overflow: hidden;
+}
+
+.artist-image {
+    border-radius: 50%;
+}
+
+/* Play Button Styles */
+.play-button {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    width: 48px;
+    height: 48px;
+    background-color: #1DB954;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+.play-button i {
+    color: white;
+    font-size: 24px;
+    margin-left: 3px;
+}
+
+/* Hover Effects - Updated selectors */
+.song-card:hover .play-button,
+.artist-card:hover .play-button,
+.playlist-card:hover .play-button,
+.radio-card:hover .play-button,
+.chart-card:hover .play-button,
+.popular-albums .song-card:hover .play-button {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+.play-button:hover {
+    transform: scale(1.1) !important;
+    background-color: #1ed760;
+}
+
+/* Image Overlay - Updated selectors */
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.3s ease;
+    border-radius: 4px;
+    z-index: 5;
+}
+
+.song-card:hover .image-overlay,
+.artist-card:hover .image-overlay,
+.playlist-card:hover .image-overlay,
+.radio-card:hover .image-overlay,
+.chart-card:hover .image-overlay,
+.popular-albums .song-card:hover .image-overlay {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+/* Card Styles */
+.song-card,
+.artist-card,
+.playlist-card,
+.radio-card,
+.chart-card {
+    text-decoration: none;
+    color: inherit;
+    background-color: #181818;
+    padding: 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.song-card:hover,
+.artist-card:hover,
+.playlist-card:hover,
+.radio-card:hover,
+.chart-card:hover {
+    background-color: #282828;
+}
+
+/* Grid Layouts */
+.song-grid,
+.artist-grid,
+.radio-grid,
+.charts-grid,
+.playlist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+/* Popular Albums specific styles */
+.popular-albums .song-card {
+    position: relative;
+}
+
+.popular-albums .song-image {
+    position: relative;
+}
+
+/* Rest of your existing styles... */ 
